@@ -1,11 +1,10 @@
 import tweepy
-import logging
-import os
+import os #operating system library
 def create_api():
-    CONSUMER_KEY = os.getenv('CONSUMER_KEY')
-    CONSUMER_SECRET = os.getenv('CONSUMER_SECRET ')
-    ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
-    ACCESS_TOKEN_SECRET = os.getenv('ACCESS_TOKEN_SECRET')
+    CONSUMER_KEY = os.getenv('CONSUMER_KEY')    #API key
+    CONSUMER_SECRET = os.getenv('CONSUMER_SECRET ')  #API Secret
+    ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')  #Generate Access Token
+    ACCESS_TOKEN_SECRET = os.getenv('ACCESS_TOKEN_SECRET') #Access Token Secret
 
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -33,14 +32,13 @@ def follower_count(user):
 
     return emoji_followers      # FOLLOWERS IN SMILEYS
 
-    api = create_api()
+ api = create_api()
 
-    while True:
-        # change to your own twitter_handle
-        user = api.get_user('the_ameen_manna')
+while True:
+   # change to your own twitter_handle
+    user = api.get_user('Remya__R') #Twitter Username
 
-        api.update_profile(name=f'aMEEr|{emoji_follower_count(user)} Followers')
-        print(f'Updating twitter profile: {emoji_follower_count(user)}')
-        print("Waiting to refresh..")
-        time.sleep(60)
-
+    api.update_profile(name=f'Remya R|{follower_count(user)} Followers')
+    print(f'Updating twitter name: Remya R|{follower_count(user)} Followers')
+    print("Waiting to refresh..")
+    time.sleep(60)
