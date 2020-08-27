@@ -19,22 +19,20 @@ def create_api():
     print('API created')
     return api
   
-  
+ #checked 
 import time
-def emoji_follower_count(user):
+def follower_count(user):
     emoji_numbers = {0: "0️⃣", 1: "1️⃣", 2: "2️⃣", 3: "3️⃣",
                      4: "4️⃣", 5: "5️⃣", 6: "6️⃣", 7: "7️⃣", 8: "8️⃣", 9: "9️⃣"}
+    uf_split = [int(i) for i in str(user.followers_count)]
 
     follower_count_list = [int(i) for i in str(user.followers_count)]
 
-    emoji_followers = ''.join([emoji_numbers[k]
-                               for k in follower_count_list if k in emoji_numbers.keys()])
+    emoji_followers = ''.join([emoji_numbers[j]
+                               for j in follower_count_list if j in emoji_numbers.keys()])
 
-    return emoji_followers # FOLLOWERS IN SMILEYS
+    return emoji_followers      # FOLLOWERS IN SMILEYS
 
-
-
-def main():
     api = create_api()
 
     while True:
