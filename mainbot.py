@@ -32,7 +32,7 @@ def follower_count(user):
 
     return emoji_followers      # FOLLOWERS IN SMILEYS
 
- api = create_api()
+api = create_api()
 
 while True:
    # change to your own twitter_handle
