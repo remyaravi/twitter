@@ -37,9 +37,8 @@ api = create_api()
 while True:
    # change to your own twitter_handle
     user = api.get_user('Remya__R') #Twitter Username
-
     api.update_profile(name=f'Remya R|{follower_count(user)} Followers')
-    print(f'Updating twitter name: Remya R|{follower_count(user)} Followers')
+    print(f'Updating twitter name: Remya R |{follower_count(user)} Followers')
     print("Waiting to refresh..")
     time.sleep(60)
     
